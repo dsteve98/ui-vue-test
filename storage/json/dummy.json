@@ -1,0 +1,8 @@
+{
+	"dropDownUom": ["SHP","SHP2","SHP3"],
+	"dropDownCurrency": [
+		{"name": "USD", "val": 1},
+		{"name": "AED", "val": 3.6275}
+	],
+	"dropDownChargeTo": ["OPTION1","OPTION2","OPTION3"]
+}

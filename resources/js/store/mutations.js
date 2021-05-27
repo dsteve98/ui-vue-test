@@ -1,13 +1,13 @@
 let mutations= {
-    addTableBRow (state , rowCounter) {
+    addTableBRow (state) {
         state.tableBRows.push({
             description: '',
             qty: '',
-            uom: '',
+            uom: 'SHP',
             unit_price: '',
             discount: 0,
             vat: 0,
-            currency: '',
+            currency: 'USD',
             vat_amount: 0,
             sub_total: 0,
             total: 0,
@@ -15,7 +15,12 @@ let mutations= {
         })
     },
     removeTableBRow (state, row) {
-        state.tableBRows.splice(state.tableBRows.indexOf(row), 1)
+        state.tableBRows.splice(state.tableBRows.indexOf(row), 1);
+    },
+    updateFormData (state, jsondata) {
+        state.dropDownUom = jsondata.dropDownUom;
+        state.dropDownCurrency = jsondata.dropDownCurrency;
+        state.dropDownChargeTo = jsondata.dropDownChargeTo;
     }
 }
 

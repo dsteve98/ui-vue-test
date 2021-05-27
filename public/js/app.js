@@ -1953,11 +1953,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "partBTable",
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['tableBRows'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['tableBRows', 'dropDownUom', 'dropDownCurrency', 'dropDownChargeTo'])),
   methods: {
     addTableBRow: function addTableBRow() {
       console.log('Heyaaa');
@@ -1968,9 +1981,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$store.commit('removeTableBRow', row);
     },
     printdata: function printdata() {
-      console.log(this.$store.state.tableBRows);
-      ;
+      console.log("Get Data!");
+      console.log(this.$store.state.tableBRows); // console.log(this.$store.state.dropDownUom);
+      // console.log(this.$store.state.dropDownCurrency);
+      // console.log(this.$store.state.dropDownChargeTo);
     }
+  },
+  mounted: function mounted() {
+    this.$store.dispatch('getFormDatas');
+    this.$store.dispatch('addTableBRow');
   }
 });
 
@@ -2052,6 +2071,14 @@ var actions = {
     var rowCounter = context.getters.rowCounter; // console.log(rowCounter)
 
     context.commit('addTableBRow', rowCounter);
+  },
+  getFormDatas: function getFormDatas(context) {
+    axios.get('api/formdatas').then(function (res) {
+      // console.log(res.data);
+      context.commit('updateFormData', res.data);
+    })["catch"](function (err) {
+      console.log(err);
+    });
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (actions);
@@ -2075,6 +2102,15 @@ var getters = {
   },
   rowCounter: function rowCounter(state) {
     return state.rowCounter;
+  },
+  dropDownUom: function dropDownUom(state) {
+    return state.dropDownUom;
+  },
+  dropDownCurrency: function dropDownCurrency(state) {
+    return state.dropDownCurrency;
+  },
+  dropDownChargeTo: function dropDownChargeTo(state) {
+    return state.dropDownChargeTo;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getters);
@@ -2126,15 +2162,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var mutations = {
-  addTableBRow: function addTableBRow(state, rowCounter) {
+  addTableBRow: function addTableBRow(state) {
     state.tableBRows.push({
       description: '',
       qty: '',
-      uom: '',
+      uom: 'SHP',
       unit_price: '',
       discount: 0,
       vat: 0,
-      currency: '',
+      currency: 'USD',
       vat_amount: 0,
       sub_total: 0,
       total: 0,
@@ -2143,6 +2179,11 @@ var mutations = {
   },
   removeTableBRow: function removeTableBRow(state, row) {
     state.tableBRows.splice(state.tableBRows.indexOf(row), 1);
+  },
+  updateFormData: function updateFormData(state, jsondata) {
+    state.dropDownUom = jsondata.dropDownUom;
+    state.dropDownCurrency = jsondata.dropDownCurrency;
+    state.dropDownChargeTo = jsondata.dropDownChargeTo;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mutations);
@@ -2161,19 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var state = {
-  tableBRows: [{
-    description: '',
-    qty: '',
-    uom: '',
-    unit_price: '',
-    discount: 0,
-    vat: 0,
-    currency: '',
-    vat_amount: 0,
-    sub_total: 0,
-    total: 0,
-    charge_to: ''
-  }]
+  dropDownUom: [],
+  dropDownCurrency: [],
+  dropDownChargeTo: [],
+  tableBRows: []
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (state);
 
@@ -20715,30 +20747,47 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.uom,
-                    expression: "row.uom"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][uom]",
-                  type: "text",
-                  placeholder: "UOM"
-                },
-                domProps: { value: row.uom },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: row.uom,
+                      expression: "row.uom"
                     }
-                    _vm.$set(row, "uom", $event.target.value)
+                  ],
+                  attrs: { name: "tableBRows[" + index + "][uom]" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        row,
+                        "uom",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
                   }
-                }
-              })
+                },
+                _vm._l(_vm.dropDownUom, function(uom, uomidx) {
+                  return _c(
+                    "option",
+                    { key: uomidx, domProps: { value: uom } },
+                    [_vm._v(_vm._s(uom))]
+                  )
+                }),
+                0
+              )
             ]),
             _vm._v(" "),
             _c("td", [
@@ -20825,30 +20874,47 @@ var render = function() {
             _c("td", [_vm._v("->")]),
             _vm._v(" "),
             _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.currency,
-                    expression: "row.currency"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][currency]",
-                  type: "text",
-                  placeholder: "Currency"
-                },
-                domProps: { value: row.currency },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: row.currency,
+                      expression: "row.currency"
                     }
-                    _vm.$set(row, "currency", $event.target.value)
+                  ],
+                  attrs: { name: "tableBRows[" + index + "][currency]" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        row,
+                        "currency",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
                   }
-                }
-              })
+                },
+                _vm._l(_vm.dropDownCurrency, function(currency, currencyidx) {
+                  return _c(
+                    "option",
+                    { key: currencyidx, domProps: { value: currency.name } },
+                    [_vm._v(_vm._s(currency.name))]
+                  )
+                }),
+                0
+              )
             ]),
             _vm._v(" "),
             _c("td", [
@@ -20933,30 +20999,55 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.charge_to,
-                    expression: "row.charge_to"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][charge_to]",
-                  type: "text",
-                  placeholder: "Charge To"
-                },
-                domProps: { value: row.charge_to },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: row.charge_to,
+                      expression: "row.charge_to"
                     }
-                    _vm.$set(row, "charge_to", $event.target.value)
+                  ],
+                  attrs: { name: "tableBRows[" + index + "][charge_to]" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        row,
+                        "charge_to",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
                   }
-                }
-              })
+                },
+                [
+                  _c(
+                    "option",
+                    { attrs: { value: "", disabled: "", selected: "" } },
+                    [_vm._v("Select an option")]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.dropDownChargeTo, function(chargeto, chargetoidx) {
+                    return _c(
+                      "option",
+                      { key: chargetoidx, domProps: { value: chargeto } },
+                      [_vm._v(_vm._s(chargeto))]
+                    )
+                  })
+                ],
+                2
+              )
             ]),
             _vm._v(" "),
             _c("td", [
@@ -20980,7 +21071,7 @@ var render = function() {
     _vm._v(" "),
     _c("button", { on: { click: _vm.addTableBRow } }, [_vm._v("+")]),
     _vm._v(" "),
-    _c("button", { on: { click: _vm.printdata } }, [_vm._v("+")])
+    _c("button", { on: { click: _vm.printdata } }, [_vm._v("%")])
   ])
 }
 var staticRenderFns = [
