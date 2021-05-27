@@ -1966,28 +1966,54 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "partBTable",
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['tableBRows', 'dropDownUom', 'dropDownCurrency', 'dropDownChargeTo'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['tableBRows', 'dropDownUom', 'dropDownCurrency', 'dropDownChargeTo', 'totalUsd', 'totalAed'])),
   methods: {
     addTableBRow: function addTableBRow() {
-      console.log('Heyaaa');
+      console.log('partBTable method addTableBRow');
       this.$store.dispatch('addTableBRow');
     },
     removeTableBRow: function removeTableBRow(row) {
-      console.log('Delete table b row');
+      console.log('partBTable method removeTableBRow');
       this.$store.commit('removeTableBRow', row);
     },
     printdata: function printdata() {
-      console.log("Get Data!");
-      console.log(this.$store.state.tableBRows); // console.log(this.$store.state.dropDownUom);
-      // console.log(this.$store.state.dropDownCurrency);
-      // console.log(this.$store.state.dropDownChargeTo);
+      console.log("partBTable method printdata");
+      console.log(this.$store.state.tableBRows);
+    },
+    updateRowValue: function updateRowValue(row) {
+      console.log('partBTable method updateRowValue');
+      this.$store.commit('updateRowValue', row);
+      this.$store.commit('updateSummary');
+    },
+    updateSummary: function updateSummary() {
+      console.log('partBTable method updateSummary');
+      this.$store.commit('updateSummary');
     }
   },
   mounted: function mounted() {
+    console.log('mounted');
     this.$store.dispatch('getFormDatas');
     this.$store.dispatch('addTableBRow');
   }
@@ -2019,8 +2045,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     return h(_app_vue__WEBPACK_IMPORTED_MODULE_1__.default);
   }
 });
-console.log('yyyyyyyy');
-console.log(_store_index__WEBPACK_IMPORTED_MODULE_0__.default.state.tableBRows);
+console.log('apps.js');
 
 /***/ }),
 
@@ -2111,6 +2136,12 @@ var getters = {
   },
   dropDownChargeTo: function dropDownChargeTo(state) {
     return state.dropDownChargeTo;
+  },
+  totalUsd: function totalUsd(state) {
+    return state.totalUsd;
+  },
+  totalAed: function totalAed(state) {
+    return state.totalAed;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getters);
@@ -2163,9 +2194,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var mutations = {
   addTableBRow: function addTableBRow(state) {
+    console.log('mutation.js addTableRow');
     state.tableBRows.push({
       description: '',
-      qty: '',
+      qty: 0,
       uom: 'SHP',
       unit_price: '',
       discount: 0,
@@ -2178,12 +2210,63 @@ var mutations = {
     });
   },
   removeTableBRow: function removeTableBRow(state, row) {
+    console.log('mutation.js removeTableBRow');
     state.tableBRows.splice(state.tableBRows.indexOf(row), 1);
   },
   updateFormData: function updateFormData(state, jsondata) {
+    console.log('mutation.js updateFormData');
     state.dropDownUom = jsondata.dropDownUom;
     state.dropDownCurrency = jsondata.dropDownCurrency;
     state.dropDownChargeTo = jsondata.dropDownChargeTo;
+  },
+  updateRowValue: function updateRowValue(state, row) {
+    console.log('mutation.js updateRowValue');
+    var idx = state.tableBRows.indexOf(row);
+    state.tableBRows[idx].sub_total = state.tableBRows[idx].qty * state.tableBRows[idx].unit_price * (100 - state.tableBRows[idx].discount) / 100;
+    state.tableBRows[idx].vat_amount = state.tableBRows[idx].sub_total * state.tableBRows[idx].vat / 100;
+    state.tableBRows[idx].total = state.tableBRows[idx].sub_total + state.tableBRows[idx].vat_amount;
+  },
+  updateSummary: function updateSummary(state) {
+    console.log('mutation.js updateSummary');
+    var sumVatAmount = 0;
+    var sumSubTotal = 0;
+    var sumTotal = 0;
+    var currencyValue = 1;
+    var usdValue = state.dropDownCurrency[state.dropDownCurrency.findIndex(function (x) {
+      return x.name == "USD";
+    })].val;
+    var aedValue = state.dropDownCurrency[state.dropDownCurrency.findIndex(function (x) {
+      return x.name == "AED";
+    })].val;
+
+    var _loop = function _loop(row) {
+      currencyIndex = state.dropDownCurrency.findIndex(function (x) {
+        return x.name == state.tableBRows[row].currency;
+      });
+      currencyValue = state.dropDownCurrency[currencyIndex].val; // console.log("CurVal = "+currencyValue);
+
+      sumVatAmount += state.tableBRows[row].vat_amount / currencyValue * usdValue;
+      sumSubTotal += state.tableBRows[row].sub_total / currencyValue * usdValue;
+      sumTotal += state.tableBRows[row].total / currencyValue * usdValue;
+    };
+
+    for (var row in state.tableBRows) {
+      var currencyIndex;
+
+      _loop(row);
+    }
+
+    ;
+    state.totalUsd = {
+      "vat_amount": sumVatAmount,
+      "sub_total": sumSubTotal,
+      "total": sumTotal
+    };
+    state.totalAed = {
+      "vat_amount": sumVatAmount / usdValue * aedValue,
+      "sub_total": sumSubTotal / usdValue * aedValue,
+      "total": sumTotal / usdValue * aedValue
+    };
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mutations);
@@ -2205,7 +2288,17 @@ var state = {
   dropDownUom: [],
   dropDownCurrency: [],
   dropDownChargeTo: [],
-  tableBRows: []
+  tableBRows: [],
+  totalUsd: {
+    "vat_amount": 0,
+    "sub_total": 0,
+    "total": 0
+  },
+  totalAed: {
+    "vat_amount": 0,
+    "sub_total": 0,
+    "total": 0
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (state);
 
@@ -20657,7 +20750,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "part-b", attrs: { id: "app" } },
-    [_c("h1", [_vm._v("HEYHEYHEY")]), _vm._v(" "), _c("part-b-table")],
+    [_c("h1", [_vm._v("Cost Detail")]), _vm._v(" "), _c("part-b-table")],
     1
   )
 }
@@ -20731,11 +20824,14 @@ var render = function() {
                 ],
                 attrs: {
                   name: "tableBRows[" + index + "][qty]",
-                  type: "text",
+                  type: "number",
                   placeholder: "Qty"
                 },
                 domProps: { value: row.qty },
                 on: {
+                  change: function($event) {
+                    return _vm.updateRowValue(row)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -20802,11 +20898,14 @@ var render = function() {
                 ],
                 attrs: {
                   name: "tableBRows[" + index + "][unit_price]",
-                  type: "text",
+                  type: "number",
                   placeholder: "Unit Price"
                 },
                 domProps: { value: row.unit_price },
                 on: {
+                  change: function($event) {
+                    return _vm.updateRowValue(row)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -20829,11 +20928,14 @@ var render = function() {
                 ],
                 attrs: {
                   name: "tableBRows[" + index + "][discount]",
-                  type: "text",
+                  type: "number",
                   placeholder: "Discount"
                 },
                 domProps: { value: row.discount },
                 on: {
+                  change: function($event) {
+                    return _vm.updateRowValue(row)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -20856,11 +20958,14 @@ var render = function() {
                 ],
                 attrs: {
                   name: "tableBRows[" + index + "][vat]",
-                  type: "text",
+                  type: "number",
                   placeholder: "VAT"
                 },
                 domProps: { value: row.vat },
                 on: {
+                  change: function($event) {
+                    return _vm.updateRowValue(row)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -20887,23 +20992,26 @@ var render = function() {
                   ],
                   attrs: { name: "tableBRows[" + index + "][currency]" },
                   on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.$set(
-                        row,
-                        "currency",
-                        $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      )
-                    }
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          row,
+                          "currency",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      },
+                      _vm.updateSummary
+                    ]
                   }
                 },
                 _vm._l(_vm.dropDownCurrency, function(currency, currencyidx) {
@@ -20917,86 +21025,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.vat_amount,
-                    expression: "row.vat_amount"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][vat_amount]",
-                  type: "text",
-                  placeholder: "VAT Amount"
-                },
-                domProps: { value: row.vat_amount },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(row, "vat_amount", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("td", [_vm._v(_vm._s(row.vat_amount))]),
             _vm._v(" "),
-            _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.sub_total,
-                    expression: "row.sub_total"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][sub_total]",
-                  type: "text",
-                  placeholder: "Sub Total"
-                },
-                domProps: { value: row.sub_total },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(row, "sub_total", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("td", [_vm._v(_vm._s(row.sub_total))]),
             _vm._v(" "),
-            _c("td", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: row.total,
-                    expression: "row.total"
-                  }
-                ],
-                attrs: {
-                  name: "tableBRows[" + index + "][total]",
-                  type: "text",
-                  placeholder: "Total"
-                },
-                domProps: { value: row.total },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(row, "total", $event.target.value)
-                  }
-                }
-              })
-            ]),
+            _c("td", [_vm._v(_vm._s(row.total))]),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -21064,12 +21097,58 @@ var render = function() {
               )
             ])
           ])
-        })
+        }),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", { attrs: { rowspan: "2", colspan: "7" } }, [
+            _vm._v(
+              "Exchange Rate " +
+                _vm._s(
+                  _vm.dropDownCurrency[
+                    _vm.dropDownCurrency.findIndex(function(x) {
+                      return x.name == "USD"
+                    })
+                  ].val
+                ) +
+                " USD =   " +
+                _vm._s(
+                  _vm.dropDownCurrency[
+                    _vm.dropDownCurrency.findIndex(function(x) {
+                      return x.name == "AED"
+                    })
+                  ].val
+                ) +
+                " AED"
+            )
+          ]),
+          _vm._v(" "),
+          _c("td", [_vm._v("AED in Total")]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalAed.vat_amount))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalAed.sub_total))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalAed.total))]),
+          _vm._v(" "),
+          _c("td"),
+          _vm._v(" "),
+          _c("td", { attrs: { rowspan: "2" } }, [
+            _c("button", { on: { click: _vm.addTableBRow } }, [_vm._v("+")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("USD in Total")]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalUsd.vat_amount))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalUsd.sub_total))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.totalUsd.total))])
+        ])
       ],
       2
     ),
-    _vm._v(" "),
-    _c("button", { on: { click: _vm.addTableBRow } }, [_vm._v("+")]),
     _vm._v(" "),
     _c("button", { on: { click: _vm.printdata } }, [_vm._v("%")])
   ])

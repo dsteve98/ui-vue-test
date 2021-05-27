@@ -10,6 +10,4 @@ const app = new Vue({
     store,
     render: h => h(App)
 });
-console.log('yyyyyyyy');
-
-console.log(store.state.tableBRows);
+console.log('apps.js');

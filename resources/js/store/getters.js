@@ -13,6 +13,12 @@ let getters= {
     },
     dropDownChargeTo: state => {
         return state.dropDownChargeTo
+    },
+    totalUsd: state => {
+        return state.totalUsd
+    },
+    totalAed: state => {
+        return state.totalAed
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="part-b">
-        <h1>HEYHEYHEY</h1>
+        <h1>Cost Detail</h1>
         <part-b-table></part-b-table>
     </div>
 </template>
