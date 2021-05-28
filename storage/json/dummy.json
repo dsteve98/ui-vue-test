@@ -4,5 +4,10 @@
 		{"name": "USD", "val": 1},
 		{"name": "AED", "val": 3.6275}
 	],
-	"dropDownChargeTo": ["OPTION1","OPTION2","OPTION3"]
+	"dropDownChargeTo": ["OPTION1","OPTION2","OPTION3"],
+    "dropDownAssignedVendor": ["Amarit","VENDOR2","VENDOR3"],
+    "dropDownInvoiceTo": ["MITO","INVOICE2","INVOICE3"],
+    "dropDownCustomerContract": ["ADNOC-ONSHORE","CCONTRACT2","CCONTRACT3"],
+    "dropDownCustomerPoNo": ["NSDUFF82MO","PONO2","PONO3"]
+	
 }

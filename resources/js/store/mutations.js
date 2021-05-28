@@ -24,6 +24,10 @@ let mutations= {
         state.dropDownUom = jsondata.dropDownUom;
         state.dropDownCurrency = jsondata.dropDownCurrency;
         state.dropDownChargeTo = jsondata.dropDownChargeTo;
+        state.dropDownAssignedVendor = jsondata.dropDownAssignedVendor;
+        state.dropDownInvoiceTo = jsondata.dropDownInvoiceTo;
+        state.dropDownCustomerContract = jsondata.dropDownCustomerContract;
+        state.dropDownCustomerPoNo = jsondata.dropDownCustomerPoNo;
     },
     updateRowValue (state, row) {
         console.log('mutation.js updateRowValue');
@@ -58,6 +62,27 @@ let mutations= {
             "sub_total": sumSubTotal / usdValue * aedValue,
             "total": sumTotal / usdValue * aedValue
         };
+    },
+    assignedVendorUpdate (state, value) {
+        state.assignedVendor = value;
+    },
+    attentionOfUpdate (state, value) {
+        state.attentionOf = value;
+    },
+    quotationNoUpdate (state, value) {
+        state.quotationNo = value;
+    },
+    invoiceToUpdate (state, value) {
+        state.invoiceTo = value;
+    },
+    customerContractUpdate (state, value) {
+        state.customerContract = value;
+    },
+    vendorAddressUpdate (state, value) {
+        state.vendorAddress = value;
+    },
+    customerPoNoUpdate (state, value) {
+        state.customerPoNo = value;
     }
 }
 

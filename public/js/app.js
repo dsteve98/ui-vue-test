@@ -1845,8 +1845,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_partB_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/partB.vue */ "./resources/js/components/partB.vue");
-/* harmony import */ var _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/bottomButton.vue */ "./resources/js/components/bottomButton.vue");
+/* harmony import */ var _components_partA_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/partA.vue */ "./resources/js/components/partA.vue");
+/* harmony import */ var _components_partB_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/partB.vue */ "./resources/js/components/partB.vue");
+/* harmony import */ var _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/bottomButton.vue */ "./resources/js/components/bottomButton.vue");
 //
 //
 //
@@ -1854,13 +1855,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'app',
   components: {
-    partB: _components_partB_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    bottomButton: _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_1__.default
+    partA: _components_partA_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    partB: _components_partB_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    bottomButton: _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_2__.default
   }
 });
 
@@ -1889,6 +1893,150 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'bottomButton'
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'partA',
+  computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(['dropDownAssignedVendor', 'dropDownInvoiceTo', 'dropDownCustomerContract', 'dropDownCustomerPoNo'])), {}, {
+    assignedVendor: {
+      get: function get() {
+        return this.$store.state.assignedVendor;
+      },
+      set: function set(value) {
+        this.$store.commit('assignedVendorUpdate', value);
+      }
+    },
+    attentionOf: {
+      get: function get() {
+        return this.$store.state.attentionOf;
+      },
+      set: function set(value) {
+        this.$store.commit('attentionOfUpdate', value);
+      }
+    },
+    quotationNo: {
+      get: function get() {
+        return this.$store.state.quotationNo;
+      },
+      set: function set(value) {
+        this.$store.commit('quotationNoUpdate', value);
+      }
+    },
+    invoiceTo: {
+      get: function get() {
+        return this.$store.state.invoiceTo;
+      },
+      set: function set(value) {
+        this.$store.commit('invoiceToUpdate', value);
+      }
+    },
+    customerContract: {
+      get: function get() {
+        return this.$store.state.customerContract;
+      },
+      set: function set(value) {
+        this.$store.commit('customerContractUpdate', value);
+      }
+    },
+    vendorAddress: {
+      get: function get() {
+        return this.$store.state.vendorAddress;
+      },
+      set: function set(value) {
+        this.$store.commit('vendorAddressUpdate', value);
+      }
+    },
+    customerPoNo: {
+      get: function get() {
+        return this.$store.state.customerPoNo;
+      },
+      set: function set(value) {
+        this.$store.commit('customerPoNoUpdate', value);
+      }
+    }
+  }),
+  methods: {
+    logdata: function logdata() {
+      console.log("PRINT STATE");
+      console.log(this.$store.state);
+    }
+  },
+  mounted: function mounted() {
+    console.log('mounted');
+    this.$store.dispatch('getFormDatas');
+  }
 });
 
 /***/ }),
@@ -2166,6 +2314,47 @@ var getters = {
   },
   totalAed: function totalAed(state) {
     return state.totalAed;
+  },
+  assignedVendor: function assignedVendor(state) {
+    return state.assignedVendor;
+  },
+  attentionOf: function attentionOf(state) {
+    return state.attentionOf;
+  },
+  quotationNo: function quotationNo(state) {
+    return state.quotationNo;
+  },
+  invoiceTo: function invoiceTo(state) {
+    return state.invoiceTo;
+  },
+  customerContract: function customerContract(state) {
+    return state.customerContract;
+  },
+  vendorAddress: function vendorAddress(state) {
+    return state.vendorAddress;
+  },
+  customerPoNo: function customerPoNo(state) {
+    return state.customerPoNo;
+  },
+  dropDownAssignedVendor: function dropDownAssignedVendor(state) {
+    return state.dropDownAssignedVendor;
+  },
+  dropDownInvoiceTo: function dropDownInvoiceTo(state) {
+    return state.dropDownInvoiceTo;
+  },
+  dropDownCustomerContract: function dropDownCustomerContract(state) {
+    return state.dropDownCustomerContract;
+  },
+  dropDownCustomerPoNo: function dropDownCustomerPoNo(state) {
+    return state.dropDownCustomerPoNo;
+  },
+  dropDownDatas: function dropDownDatas(state) {
+    return {
+      "dropDownAssignedVendor": state.dropDownAssignedVendor,
+      "dropDownInvoiceTo": state.dropDownInvoiceTo,
+      "dropDownCustomerContract": state.dropDownCustomerContract,
+      "dropDownCustomerPoNo": state.dropDownCustomerPoNo
+    };
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getters);
@@ -2242,6 +2431,10 @@ var mutations = {
     state.dropDownUom = jsondata.dropDownUom;
     state.dropDownCurrency = jsondata.dropDownCurrency;
     state.dropDownChargeTo = jsondata.dropDownChargeTo;
+    state.dropDownAssignedVendor = jsondata.dropDownAssignedVendor;
+    state.dropDownInvoiceTo = jsondata.dropDownInvoiceTo;
+    state.dropDownCustomerContract = jsondata.dropDownCustomerContract;
+    state.dropDownCustomerPoNo = jsondata.dropDownCustomerPoNo;
   },
   updateRowValue: function updateRowValue(state, row) {
     console.log('mutation.js updateRowValue');
@@ -2291,6 +2484,27 @@ var mutations = {
       "sub_total": sumSubTotal / usdValue * aedValue,
       "total": sumTotal / usdValue * aedValue
     };
+  },
+  assignedVendorUpdate: function assignedVendorUpdate(state, value) {
+    state.assignedVendor = value;
+  },
+  attentionOfUpdate: function attentionOfUpdate(state, value) {
+    state.attentionOf = value;
+  },
+  quotationNoUpdate: function quotationNoUpdate(state, value) {
+    state.quotationNo = value;
+  },
+  invoiceToUpdate: function invoiceToUpdate(state, value) {
+    state.invoiceTo = value;
+  },
+  customerContractUpdate: function customerContractUpdate(state, value) {
+    state.customerContract = value;
+  },
+  vendorAddressUpdate: function vendorAddressUpdate(state, value) {
+    state.vendorAddress = value;
+  },
+  customerPoNoUpdate: function customerPoNoUpdate(state, value) {
+    state.customerPoNo = value;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mutations);
@@ -2310,7 +2524,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var state = {
   dropDownUom: [],
-  dropDownCurrency: [],
+  dropDownCurrency: [{
+    "name": "USD",
+    "val": 1
+  }, {
+    "name": "AED",
+    "val": 3.6275
+  }],
   dropDownChargeTo: [],
   tableBRows: [],
   totalUsd: {
@@ -2322,7 +2542,18 @@ var state = {
     "vat_amount": 0,
     "sub_total": 0,
     "total": 0
-  }
+  },
+  assignedVendor: "Amarit",
+  attentionOf: "Johnny",
+  quotationNo: "ABC-123-45",
+  invoiceTo: "MITO",
+  customerContract: "ADNOC-ONSHORE",
+  vendorAddress: "Generic Address #1",
+  customerPoNo: "NSDUFF82MO",
+  dropDownAssignedVendor: [],
+  dropDownInvoiceTo: [],
+  dropDownCustomerContract: [],
+  dropDownCustomerPoNo: []
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (state);
 
@@ -20587,6 +20818,45 @@ component.options.__file = "resources/js/components/bottomButton.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/partA.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/partA.vue ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./partA.vue?vue&type=template&id=2549271a& */ "./resources/js/components/partA.vue?vue&type=template&id=2549271a&");
+/* harmony import */ var _partA_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partA.vue?vue&type=script&lang=js& */ "./resources/js/components/partA.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _partA_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/partA.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/partB.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/partB.vue ***!
@@ -20697,6 +20967,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/partA.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/partA.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_partA_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./partA.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_partA_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/partB.vue?vue&type=script&lang=js&":
 /*!********************************************************************!*\
   !*** ./resources/js/components/partB.vue?vue&type=script&lang=js& ***!
@@ -20763,6 +21049,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/partA.vue?vue&type=template&id=2549271a&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/partA.vue?vue&type=template&id=2549271a& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_partA_vue_vue_type_template_id_2549271a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./partA.vue?vue&type=template&id=2549271a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=template&id=2549271a&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/partB.vue?vue&type=template&id=252cf818&":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/partB.vue?vue&type=template&id=252cf818& ***!
@@ -20816,7 +21119,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "mainContainer", attrs: { id: "app" } },
-    [_c("part-b"), _vm._v(" "), _c("bottom-button")],
+    [_c("part-a"), _vm._v(" "), _c("part-b"), _vm._v(" "), _c("bottom-button")],
     1
   )
 }
@@ -20867,6 +21170,341 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=template&id=2549271a&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partA.vue?vue&type=template&id=2549271a& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "part-a" }, [
+    _c("table", { staticClass: "tableA" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.assignedVendor,
+                  expression: "assignedVendor"
+                }
+              ],
+              staticClass: "tInput tContent",
+              attrs: { name: "assignedVendor" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.assignedVendor = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            _vm._l(_vm.dropDownAssignedVendor, function(dAssign, dAssignIdx) {
+              return _c(
+                "option",
+                { key: dAssignIdx, domProps: { value: dAssign } },
+                [_vm._v(_vm._s(dAssign))]
+              )
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.attentionOf,
+                expression: "attentionOf"
+              }
+            ],
+            staticClass: "tInput tContent",
+            attrs: {
+              type: "text",
+              name: "attentionOf",
+              placeholder: "Attention Of"
+            },
+            domProps: { value: _vm.attentionOf },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.attentionOf = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.quotationNo,
+                expression: "quotationNo"
+              }
+            ],
+            staticClass: "tInput tContent",
+            attrs: {
+              type: "text",
+              name: "quotationNo",
+              placeholder: "Quotation No."
+            },
+            domProps: { value: _vm.quotationNo },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.quotationNo = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.invoiceTo,
+                  expression: "invoiceTo"
+                }
+              ],
+              staticClass: "tInput tContent",
+              attrs: { name: "invoiceTo" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.invoiceTo = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            _vm._l(_vm.dropDownInvoiceTo, function(dInvoice, dInvoiceIdx) {
+              return _c(
+                "option",
+                { key: dInvoiceIdx, domProps: { value: dInvoice } },
+                [_vm._v(_vm._s(dInvoice))]
+              )
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.customerContract,
+                  expression: "customerContract"
+                }
+              ],
+              staticClass: "tInput tContent",
+              attrs: { name: "customerContract" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.customerContract = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            _vm._l(_vm.dropDownCustomerContract, function(
+              dCustomer,
+              dCustomerIdx
+            ) {
+              return _c(
+                "option",
+                { key: dCustomerIdx, domProps: { value: dCustomer } },
+                [_vm._v(_vm._s(dCustomer))]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", { attrs: { colspan: "4" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.vendorAddress,
+                expression: "vendorAddress"
+              }
+            ],
+            staticClass: "tInput tContent",
+            attrs: {
+              type: "text",
+              name: "vendorAddress",
+              placeholder: "vendorAddress"
+            },
+            domProps: { value: _vm.vendorAddress },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.vendorAddress = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("td", [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.customerPoNo,
+                  expression: "customerPoNo"
+                }
+              ],
+              staticClass: "tInput tContent",
+              attrs: { name: "customerPoNo" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.customerPoNo = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            _vm._l(_vm.dropDownCustomerPoNo, function(dPono, dPonoIdx) {
+              return _c(
+                "option",
+                { key: dPonoIdx, domProps: { value: dPono } },
+                [_vm._v(_vm._s(dPono))]
+              )
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [
+        _c("h3", { staticClass: "partBTitle" }, [
+          _c("i", {
+            staticClass: "fa fa-truck fa-flip-horizontal",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" Logistic Instructions")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("td", { attrs: { colspan: "5" } }, [_c("span", [_vm._v("draft")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { attrs: { rowspan: "4" } }),
+      _vm._v(" "),
+      _c("td", [_vm._v("Assigned Vendor")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Attention Of")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Quotation No.")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Invoice To")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Customer - Contract")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { attrs: { colspan: "4" } }, [_vm._v("Vendor Address")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Customer PO No.")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partB.vue?vue&type=template&id=252cf818&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/partB.vue?vue&type=template&id=252cf818& ***!
@@ -20885,7 +21523,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "part-b", attrs: { id: "app" } },
+    { staticClass: "part-b" },
     [_vm._m(0), _vm._v(" "), _c("part-b-table")],
     1
   )
@@ -20929,6 +21567,7 @@ var render = function() {
   return _c("div", [
     _c(
       "table",
+      { staticClass: "tableB" },
       [
         _vm._m(0),
         _vm._v(" "),

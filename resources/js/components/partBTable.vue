@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table>
+        <table class="tableB">
             <tr class="tableHeader">
                 <th class="tDescription">Description</th>
                 <th class="tQty">Qty</th>
