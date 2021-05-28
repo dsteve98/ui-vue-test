@@ -1846,6 +1846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_partB_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/partB.vue */ "./resources/js/components/partB.vue");
+/* harmony import */ var _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/bottomButton.vue */ "./resources/js/components/bottomButton.vue");
 //
 //
 //
@@ -1853,14 +1854,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
- // import buttonsOption from './components/buttonsOption.vue'
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'app',
   components: {
-    partB: _components_partB_vue__WEBPACK_IMPORTED_MODULE_0__.default // buttonsOption
-
+    partB: _components_partB_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    bottomButton: _components_bottomButton_vue__WEBPACK_IMPORTED_MODULE_1__.default
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'bottomButton'
 });
 
 /***/ }),
@@ -1997,10 +2025,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     removeTableBRow: function removeTableBRow(row) {
       console.log('partBTable method removeTableBRow');
       this.$store.commit('removeTableBRow', row);
-    },
-    printdata: function printdata() {
-      console.log("partBTable method printdata");
-      console.log(this.$store.state.tableBRows);
     },
     updateRowValue: function updateRowValue(row) {
       console.log('partBTable method updateRowValue');
@@ -20524,6 +20548,45 @@ component.options.__file = "resources/js/app.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/bottomButton.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/bottomButton.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bottomButton.vue?vue&type=template&id=bf112af0& */ "./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0&");
+/* harmony import */ var _bottomButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bottomButton.vue?vue&type=script&lang=js& */ "./resources/js/components/bottomButton.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _bottomButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__.render,
+  _bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/bottomButton.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/partB.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/partB.vue ***!
@@ -20618,6 +20681,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/bottomButton.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/bottomButton.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_bottomButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./bottomButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_bottomButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/partB.vue?vue&type=script&lang=js&":
 /*!********************************************************************!*\
   !*** ./resources/js/components/partB.vue?vue&type=script&lang=js& ***!
@@ -20663,6 +20742,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_template_id_23235493___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_template_id_23235493___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib/index.js??vue-loader-options!./app.vue?vue&type=template&id=23235493& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/app.vue?vue&type=template&id=23235493&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bottomButton_vue_vue_type_template_id_bf112af0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./bottomButton.vue?vue&type=template&id=bf112af0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0&");
 
 
 /***/ }),
@@ -20719,12 +20815,52 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "app" } },
-    [_c("h1", [_vm._v("HELLLO")]), _vm._v(" "), _c("part-b")],
+    { staticClass: "mainContainer", attrs: { id: "app" } },
+    [_c("part-b"), _vm._v(" "), _c("bottom-button")],
     1
   )
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/bottomButton.vue?vue&type=template&id=bf112af0& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "bottom-button" }, [
+      _c("div", { staticClass: "buttContainer" }, [
+        _c("button", { staticClass: "cancelButt" }, [_vm._v("Cancel")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "draftButt" }, [_vm._v("Save as Draft")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "submitButt" }, [_vm._v("Submit")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -20750,11 +20886,24 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "part-b", attrs: { id: "app" } },
-    [_c("h1", [_vm._v("Cost Detail")]), _vm._v(" "), _c("part-b-table")],
+    [_vm._m(0), _vm._v(" "), _c("part-b-table")],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "partBTitle" }, [
+      _vm._v("Cost Detail "),
+      _c("i", {
+        staticClass: "fa fa-chevron-down",
+        attrs: { "aria-hidden": "true" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -20784,7 +20933,7 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _vm._l(_vm.tableBRows, function(row, index) {
-          return _c("tr", { key: index }, [
+          return _c("tr", { key: index, staticClass: "trBody" }, [
             _c("td", [
               _c("input", {
                 directives: [
@@ -20795,6 +20944,7 @@ var render = function() {
                     expression: "row.description"
                   }
                 ],
+                staticClass: "tInput tContent",
                 attrs: {
                   name: "tableBRows[" + index + "][description]",
                   type: "text",
@@ -20822,9 +20972,11 @@ var render = function() {
                     expression: "row.qty"
                   }
                 ],
+                staticClass: "tInput tContent",
                 attrs: {
                   name: "tableBRows[" + index + "][qty]",
                   type: "number",
+                  min: "0",
                   placeholder: "Qty"
                 },
                 domProps: { value: row.qty },
@@ -20854,6 +21006,7 @@ var render = function() {
                       expression: "row.uom"
                     }
                   ],
+                  staticClass: "tInput tContent",
                   attrs: { name: "tableBRows[" + index + "][uom]" },
                   on: {
                     change: function($event) {
@@ -20896,9 +21049,11 @@ var render = function() {
                     expression: "row.unit_price"
                   }
                 ],
+                staticClass: "tInput tContent",
                 attrs: {
                   name: "tableBRows[" + index + "][unit_price]",
                   type: "number",
+                  min: "0",
                   placeholder: "Unit Price"
                 },
                 domProps: { value: row.unit_price },
@@ -20926,9 +21081,12 @@ var render = function() {
                     expression: "row.discount"
                   }
                 ],
+                staticClass: "tInput tContent",
                 attrs: {
                   name: "tableBRows[" + index + "][discount]",
                   type: "number",
+                  min: "0",
+                  max: "100",
                   placeholder: "Discount"
                 },
                 domProps: { value: row.discount },
@@ -20956,9 +21114,12 @@ var render = function() {
                     expression: "row.vat"
                   }
                 ],
+                staticClass: "tInput tContent",
                 attrs: {
                   name: "tableBRows[" + index + "][vat]",
                   type: "number",
+                  min: "0",
+                  max: "100",
                   placeholder: "VAT"
                 },
                 domProps: { value: row.vat },
@@ -20976,7 +21137,7 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("td", [_vm._v("->")]),
+            _vm._m(1, true),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -20990,6 +21151,7 @@ var render = function() {
                       expression: "row.currency"
                     }
                   ],
+                  staticClass: "tContent",
                   attrs: { name: "tableBRows[" + index + "][currency]" },
                   on: {
                     change: [
@@ -21025,11 +21187,15 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(row.vat_amount))]),
+            _c("td", { staticClass: "tContent" }, [
+              _vm._v(_vm._s(row.vat_amount))
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(row.sub_total))]),
+            _c("td", { staticClass: "tContent" }, [
+              _vm._v(_vm._s(row.sub_total))
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(row.total))]),
+            _c("td", { staticClass: "tContent" }, [_vm._v(_vm._s(row.total))]),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -21043,6 +21209,7 @@ var render = function() {
                       expression: "row.charge_to"
                     }
                   ],
+                  staticClass: "tInput tContent",
                   attrs: { name: "tableBRows[" + index + "][charge_to]" },
                   on: {
                     change: function($event) {
@@ -21083,10 +21250,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("td", [
+            _c("td", { staticClass: "tContent" }, [
               _c(
                 "button",
                 {
+                  staticClass: "rowButton minusRow",
                   on: {
                     click: function($event) {
                       return _vm.removeTableBRow(row)
@@ -21099,58 +21267,83 @@ var render = function() {
           ])
         }),
         _vm._v(" "),
+        _c("tr", { staticClass: "rDivider" }),
+        _vm._v(" "),
         _c("tr", [
-          _c("td", { attrs: { rowspan: "2", colspan: "7" } }, [
-            _vm._v(
-              "Exchange Rate " +
-                _vm._s(
-                  _vm.dropDownCurrency[
-                    _vm.dropDownCurrency.findIndex(function(x) {
-                      return x.name == "USD"
-                    })
-                  ].val
-                ) +
-                " USD =   " +
-                _vm._s(
-                  _vm.dropDownCurrency[
-                    _vm.dropDownCurrency.findIndex(function(x) {
-                      return x.name == "AED"
-                    })
-                  ].val
-                ) +
-                " AED"
-            )
+          _c(
+            "td",
+            { staticClass: "leftAlign", attrs: { rowspan: "2", colspan: "7" } },
+            [
+              _vm._v(
+                "Exchange Rate " +
+                  _vm._s(
+                    _vm.dropDownCurrency[
+                      _vm.dropDownCurrency.findIndex(function(x) {
+                        return x.name == "USD"
+                      })
+                    ].val
+                  ) +
+                  " USD =   " +
+                  _vm._s(
+                    _vm.dropDownCurrency[
+                      _vm.dropDownCurrency.findIndex(function(x) {
+                        return x.name == "AED"
+                      })
+                    ].val
+                  ) +
+                  " AED"
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("td", { staticClass: "tSummary" }, [_vm._v("AED in Total")]),
+          _vm._v(" "),
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalAed.vat_amount))
           ]),
           _vm._v(" "),
-          _c("td", [_vm._v("AED in Total")]),
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalAed.sub_total))
+          ]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalAed.vat_amount))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalAed.sub_total))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalAed.total))]),
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalAed.total))
+          ]),
           _vm._v(" "),
           _c("td"),
           _vm._v(" "),
           _c("td", { attrs: { rowspan: "2" } }, [
-            _c("button", { on: { click: _vm.addTableBRow } }, [_vm._v("+")])
+            _c(
+              "button",
+              {
+                staticClass: "rowButton plusRow",
+                on: { click: _vm.addTableBRow }
+              },
+              [_vm._v("+")]
+            )
           ])
         ]),
         _vm._v(" "),
         _c("tr", [
-          _c("td", [_vm._v("USD in Total")]),
+          _c("td", { staticClass: "tSummary" }, [_vm._v("USD in Total")]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalUsd.vat_amount))]),
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalUsd.vat_amount))
+          ]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalUsd.sub_total))]),
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalUsd.sub_total))
+          ]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.totalUsd.total))])
+          _c("td", { staticClass: "tSummary" }, [
+            _vm._v(_vm._s(_vm.totalUsd.total))
+          ]),
+          _vm._v(" "),
+          _c("td")
         ])
       ],
       2
-    ),
-    _vm._v(" "),
-    _c("button", { on: { click: _vm.printdata } }, [_vm._v("%")])
+    )
   ])
 }
 var staticRenderFns = [
@@ -21158,32 +21351,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Description")]),
+    return _c("tr", { staticClass: "tableHeader" }, [
+      _c("th", { staticClass: "tDescription" }, [_vm._v("Description")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Qty")]),
+      _c("th", { staticClass: "tQty" }, [_vm._v("Qty")]),
       _vm._v(" "),
-      _c("th", [_vm._v("UOM")]),
+      _c("th", { staticClass: "tUom" }, [_vm._v("UOM")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Unit Price")]),
+      _c("th", { staticClass: "tUnitPrice" }, [_vm._v("Unit Price")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Discount (%)")]),
+      _c("th", { staticClass: "tDiscount" }, [_vm._v("Discount (%)")]),
       _vm._v(" "),
-      _c("th", [_vm._v("VAT (%)")]),
+      _c("th", { staticClass: "tVat" }, [_vm._v("VAT (%)")]),
       _vm._v(" "),
-      _c("th"),
+      _c("th", { staticClass: "tArrow" }),
       _vm._v(" "),
-      _c("th", [_vm._v("Currency")]),
+      _c("th", { staticClass: "tCurrency" }, [_vm._v("Currency")]),
       _vm._v(" "),
-      _c("th", [_vm._v("VAT Amount")]),
+      _c("th", { staticClass: "tVatAmount" }, [_vm._v("VAT Amount")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Sub Total")]),
+      _c("th", { staticClass: "tSubTotal" }, [_vm._v("Sub Total")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Total")]),
+      _c("th", { staticClass: "tTotal" }, [_vm._v("Total")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Charge To")]),
+      _c("th", { staticClass: "tChargeTo" }, [_vm._v("Charge To")]),
       _vm._v(" "),
-      _c("th")
+      _c("th", { staticClass: "tDeleteRow" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("i", {
+        staticClass: "fa fa-arrow-right",
+        attrs: { "aria-hidden": "true" }
+      })
     ])
   }
 ]

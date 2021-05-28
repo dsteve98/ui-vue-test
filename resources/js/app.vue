@@ -1,19 +1,19 @@
 <template>
-    <div id="app">
-        <h1>HELLLO</h1>
+    <div id="app" class="mainContainer">
         <part-b></part-b>
+        <bottom-button></bottom-button>
     </div>
 </template>
 
 <script>
 import partB from './components/partB.vue'
-// import buttonsOption from './components/buttonsOption.vue'
+import bottomButton from './components/bottomButton.vue'
 
 export default ({
     name: 'app',
     components: {
-        partB
-        // buttonsOption
+        partB,
+        bottomButton
     }
 })
 </script>

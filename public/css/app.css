@@ -1,1 +1,179 @@
+.mainContainer {
+    width: 100%;
+}
 
+/* ---- B Part ------- */
+.part-b {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.partBTitle {
+    margin-left: 20px;
+    color: #00bfbf;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    color: #727375;
+    font-size: 14px;
+    text-align: center;
+}
+
+td {
+    padding: 4px;
+}
+
+.trBody {
+    border-bottom: 1px solid #ececec;
+}
+
+.tInput {
+    background-color: #fbfbfb;
+    border: 1px solid #f5f6f8;
+    border-radius: 4px;
+    height: 34px;
+}
+
+.tableHeader {
+    background-color: #f5f6f8;
+}
+
+.tDescription {
+    width: 11.3%;
+    min-width: 150px;
+}
+.tQty {
+    width: 3.8%;
+    min-width: 50px;
+}
+.tUom {
+    width: 6%;
+    min-width: 80px;
+}
+.tUnitPrice {
+    width: 9.5%;
+    min-width: 120px;
+}
+.tDiscount {
+    width: 7.5%;
+    min-width: 100px;
+}
+.tVat {
+    width: 7.5%;
+    min-width: 100px;
+}
+.tArrow {
+    width: 2.3%;
+    min-width: 20px;
+}
+.tCurrency {
+    width: 9%;
+    min-width: 120px;
+}
+.tVatAmount {
+    width: 9.5%;
+    min-width: 120px;
+}
+.tSubTotal {
+    width: 9.5%;
+    min-width: 120px;
+}
+.tTotal {
+    width: 9.5%;
+    min-width: 120px;
+}
+.tChargeTo {
+    width: 9%;
+    min-width: 130px;
+}
+.tDeleteRow {
+    width: 4.6%;
+    min-width: 40px;
+}
+
+.tContent {
+    width: 100%;
+}
+
+.rowButton {
+    font-size: 30px;
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+}
+
+.minusRow {
+    color: #727375;
+    background-color: #e5e5e5;
+}
+
+.plusRow {
+    color: #f9fefe;
+    background-color: #00c0bf;
+}
+
+.tSummary {
+    color: black;
+    background-color: #f5f6f8;
+    border-top: 1px solid white;
+}
+
+.rDivider {
+    height: 1px;
+}
+
+.leftAlign {
+    text-align: left;
+}
+
+/* ---- Botton Button ------- */
+
+.bottom-button {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: auto;
+    height: 100px;
+    position: relative;
+}
+
+.buttContainer {
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 14;
+}
+
+.buttContainer button{
+    height: 34px;
+    margin-left: 20px;
+}
+
+.cancelButt {
+    background-color: transparent;
+    width: 90px;
+}
+
+.draftButt {
+    background-color: transparent;
+    color: #727375;
+    border: 1px solid #727375;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.submitButt {
+    color: #f9fefe;
+    background-color: #00c0bf;
+    border-radius: 4px;
+    width: 150px;
+}
